@@ -1,26 +1,29 @@
-console.log("Hello world!");
+class Person{
+	name: string;
+	age: number;
 
-let x: number = 2;
-let y: string;
-let z: boolean;
+	constructor(name: string, age:number){
+		this.name = name;
+		this.age = age;
+	}
 
-y = "napis";
+	welcome(){
+		console.log(`Hello ${this.name}, ${this.age}`);
+	}
 
-z = true;
-z = false;
+}
 
-console.log(x+ " " + y);
-console.log(z);
+class Customer extends Person{
+    advisor: string;
 
-let xd: number[] = [3, 2, 1];
-let ys: Array<number>;
-
-xd[0] = 4;
-
-let zs = [1, 5, 7, ...xd];
-
-console.log(zs)
+    constructor(name: string, age:number, advisor: string){
+        super(name, age);
+        this.advisor = advisor;
+    }
+}
 
 
-console.log(xd.length);
-console.log(`Liczba x = ${x}`);
+let customer = new Customer("Jan", 45, "Agata");
+
+console.log(customer);
+console.log(customer.welcome());
