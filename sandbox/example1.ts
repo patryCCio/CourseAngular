@@ -25,5 +25,9 @@ class Customer extends Person{
 
 let customer = new Customer("Jan", 45, "Agata");
 
+let jan: Person = new Customer("Janek", 56, "Ewa");
+
 console.log(customer);
 console.log(customer.welcome());
+
+console.log(jan.welcome());

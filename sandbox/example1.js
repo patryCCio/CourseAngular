@@ -1,25 +1,39 @@
-var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
-    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
-        if (ar || !(i in from)) {
-            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
-            ar[i] = from[i];
-        }
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var Person = /** @class */ (function () {
+    function Person(name, age) {
+        this.name = name;
+        this.age = age;
     }
-    return to.concat(ar || Array.prototype.slice.call(from));
-};
-console.log("Hello world!");
-var x = 2;
-var y;
-var z;
-y = "napis";
-z = true;
-z = false;
-console.log(x + " " + y);
-console.log(z);
-var xd = [3, 2, 1];
-var ys;
-xd[0] = 4;
-var zs = __spreadArray([1, 5, 7], xd, true);
-console.log(zs);
-console.log(xd.length);
-console.log("Liczba x = ".concat(x));
+    Person.prototype.welcome = function () {
+        console.log("Hello ".concat(this.name, ", ").concat(this.age));
+    };
+    return Person;
+}());
+var Customer = /** @class */ (function (_super) {
+    __extends(Customer, _super);
+    function Customer(name, age, advisor) {
+        var _this = _super.call(this, name, age) || this;
+        _this.advisor = advisor;
+        return _this;
+    }
+    return Customer;
+}(Person));
+var customer = new Customer("Jan", 45, "Agata");
+var jan = new Customer("Janek", 56, "Ewa");
+console.log(customer);
+console.log(customer.welcome());
+console.log(jan.welcome());
