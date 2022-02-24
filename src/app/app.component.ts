@@ -14,15 +14,21 @@ import { Customer } from './model';
       </div>
       <div class="panel-body">
         <div class="row">
-          <div class="col-sm-6">
+          <div class="col-sm-8">
             <p>{{ customer.description }}</p>
             <p>Wiek: {{ customer.age }}</p>
             <p>Adres: {{ customer.address.street }} {{ customer.address.houseNumber }}, {{ customer.address.city }}</p>
             <button class="btn btn-primary" (click)="changeIsActive()" type="button">Przełącz podkreślenie</button>
             <button class="btn btn-primary" (click)="changeColor()" type="button">Przełącz kolor</button>
           </div>
-          <div class="col-sm-6">
-              <img [src] = customer.photoUrl/>
+          <div class="col-sm-4">
+            <div class="checkbox">
+              <label><input type="checkbox" [(ngModel)]="showPhoto">Pokaż zdjęcie</label>
+            </div>
+            <ng-template #noPhoto>
+              <p>Zdjęcie ukryte</p>
+            </ng-template>
+            <img *ngIf="showPhoto else noPhoto" [src] = customer.photoUrl/>
           </div>    
         </div>   
       </div>
@@ -46,7 +52,8 @@ export class AppComponent {
   };
 
   nameColor = "blue"
-  isActive: boolean = true
+  isActive: boolean = true;
+  showPhoto: boolean = false;
 
   constructor(){
       
