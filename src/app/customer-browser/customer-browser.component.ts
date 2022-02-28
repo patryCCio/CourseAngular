@@ -13,7 +13,7 @@ export class CustomerBrowserComponent implements OnInit {
       name: "Jan Kowalski",
       photoUrl: "assets/img/elegancko.jpg",
       age: 34,
-      description: "Very important client",
+      description: "Dzwonić co każdy wtorek",
       address: {
         street: "Zielona",
         houseNumber: 5,
@@ -31,7 +31,7 @@ export class CustomerBrowserComponent implements OnInit {
       name: "Agata Czarna",
       photoUrl: "assets/img/elegancko.jpg",
       age: 21,
-      description: "Important client",
+      description: "Sponsor, utrzymywać relację, oferty",
       address: {
         street: "Chmielna",
         houseNumber: 16,
@@ -49,7 +49,7 @@ export class CustomerBrowserComponent implements OnInit {
       name: "Adam Pękała",
       photoUrl: "assets/img/elegancko.jpg",
       age: 41,
-      description: "Very important client",
+      description: "Klient B2B, przedstawiciel",
       address: {
         street: "Grójecka",
         houseNumber: 32,
@@ -70,6 +70,19 @@ export class CustomerBrowserComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onShift(direction: string){
+    const idx = this.customers.indexOf(this.customer);
+    if(idx > 0 && direction === 'left'){
+      this.customer = this.customers[idx - 1];
+    } else if(idx < this.customers.length-1 && direction === 'right'){
+      this.customer = this.customers[idx + 1];
+    } else if(idx == 0){
+      this.customer = this.customers[this.customers.length-1];
+    } else if(idx == this.customers.length-1){
+      this.customer = this.customers[0];
+    }
   }
 
 }

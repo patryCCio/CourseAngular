@@ -1,9 +1,12 @@
 <div class="panel-container">
-    <div class="panel-body">
-      <select class="combobox" [(ngModel)]="customer">
-        <option [ngValue]="null">Brak klienta</option>
-        <option *ngFor="let c of customers" [ngValue]="c">{{ c.name }}</option>
-      </select>
-    </div>
+  <div class="panel-body">
+    <select class="combobox" [(ngModel)]="customer">
+      <option [ngValue]="null">Brak klienta</option>
+      <option *ngFor="let c of customers" [ngValue]="c">{{ c.name }}</option>
+    </select>
   </div>
-<app-customer-details [customer]="customer"></app-customer-details>
+</div>
+
+<div *ngIf="customer">
+  <app-customer-details [customer]="customer" (shift)="onShift($event)"></app-customer-details>
+</div>

@@ -1,6 +1,8 @@
 <div class="panel-container">
     <div class="panel-heading">
         <h1 [class.isActive]="isActive" [style.color]="nameColor">{{customer.name}}
+
+
             <ng-container [ngSwitch]="customer.type">
                 <ng-container *ngSwitchCase="CustomerType.Standard">*</ng-container>
                 <ng-container *ngSwitchCase="CustomerType.Premium">**</ng-container>
@@ -12,6 +14,8 @@
     <div class="panel-body">
         <div class="row">
             <div class="col-2">
+                <button type="button" class="arrow-button" (click)="left()">&lt;</button>
+                <button type="button" class="arrow-button" (click)="right()">&gt;</button>
                 <p>{{ customer.description }}</p>
                 <p>Wiek: {{ customer.age }}</p>
                 <p>Adres: {{ customer.address.street }} {{ customer.address.houseNumber }}, {{ customer.address.city
@@ -22,7 +26,7 @@
                 </ul>
                 <button class="btn" (click)="changeColor()" type="button">Przełącz kolor</button>
             </div>
-            <div class="col-2">
+            <div class="col-2" id="col-avatar">
                 <div class="checkbox">
                     <label><input type="checkbox" [(ngModel)]="showPhoto">Pokaż zdjęcie</label>
                 </div>
@@ -31,8 +35,9 @@
                     <p>Zdjęcie ukryte</p>
                 </ng-template>
                 <ng-template #photo>
-                    <img [src]=customer.photoUrl />
+                    <img class="avatar-photo" [src]=customer.photoUrl />
                 </ng-template>
+                <!-- <p>{{ counter }}</p> -->
             </div>
         </div>
     </div>

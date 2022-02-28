@@ -5,7 +5,6 @@ body{
 
 .container{
     width: 100%;
-    height: 100%;
     margin: 0;
     padding: 0;
     overflow: hidden;
@@ -17,18 +16,24 @@ body{
 
 .panel-heading{
     width: 100%;
-    height: 100px;
-    display: flex;
-    background-color: rgb(211, 206, 206);
+    background-color: rgb(231, 227, 227);
     margin: 0px;
-    padding: 0px 20px 0px 20px;
+    padding: 10px 40px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+}
+
+.avatar-photo{
+    max-width: 60%;
+    background-size: cover;
 }
 
 .panel-body{
-    width: 100%;
-    background-color: rgb(235, 230, 230);
-    margin: 20px 0px 20px 0px;
-    padding: 20px 0px;
+    border: 2px solid rgb(235, 230, 230);
+    margin: 40px 40px;
+    padding: 20px 10px;
     -webkit-box-shadow: 0px 0px 16px -12px rgba(66, 68, 90, 1);
     -moz-box-shadow: 0px 0px 16px -12px rgba(66, 68, 90, 1);
     box-shadow: 0px 0px 16px -12px rgba(66, 68, 90, 1);
@@ -38,37 +43,66 @@ body{
     display: flex;
     justify-content: space-around;
     flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .col-2{
-    padding: 10px;
-    font-size: 14px;
+    border: 2px solid rgb(235, 230, 230);
+    align-items: center;
+    font-size: 16px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     width: 45%;
-    background-color: rgb(255, 255, 255);
+    padding: 10px;
     border-radius: 9px;
     -webkit-box-shadow: 0px 8px 16px -12px rgba(66, 68, 90, 1);
     -moz-box-shadow: 0px 8px 16px -12px rgba(66, 68, 90, 1);
     box-shadow: 0px 8px 16px -12px rgba(66, 68, 90, 1);
 }
 
+#col-avatar{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
 
 .checkbox{
+}
+
+.arrow-button{
+    width: 35px;
+    height: 35px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(236, 233, 233); 
+    font-weight: bold;
+    font-size: 30px;
+    margin: 0 3px;
+    color: black;
+    transition: 150ms ease-in-out;
+}
+
+.arrow-button:hover{
+    background-color: rgb(167, 218, 252);
+    cursor: pointer;  
+    color: rgb(40, 77, 102);
 }
 
 .combobox, .btn{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 16px;
-    color: blue;
+    color: black;
     font-weight: bold;
     width: 160px;
     height: 34px;
     border: none;
-    border-radius: 10px;
-    background-color: rgb(195, 231, 255); 
+    border-radius: 8px;
+    background-color: rgb(236, 233, 233); 
+    transition: 150ms ease-in-out;
 }
 
 .btn:hover{
     background-color: rgb(167, 218, 252);
     cursor: pointer;
+    color: rgb(40, 77, 102);
 }
