@@ -54,7 +54,9 @@
             ],
             "styles": [
               "src/styles.css",
-              "src/assets/css/main.css"
+              "src/assets/css/main.css",
+              "src/assets/css/navigation.css",
+              "src/assets/css/form.css"
             ],
             "scripts": []
           },
