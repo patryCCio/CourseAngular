@@ -30,3 +30,15 @@
 .form-group label{
     margin-bottom: 7px;
 }
+
+.danger-form{
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 2px solid rgb(247, 91, 91);
+    font-weight: bold;
+    font-size: 16px;
+    color: rgb(184, 53, 53);
+    padding: 10px;
+    width: 350px;
+    background-color: rgb(255, 195, 195);
+}

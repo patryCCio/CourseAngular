@@ -13,11 +13,11 @@ export class ContractService {
     @Inject(CONFIG) private config: Config
   ) { }
 
-  getCustomers(){
+  getContract(){
     return this.httpClient.get<Contract[]>(`${this.config.appUrl}/contracts`);
   }
 
-  getCustomer(id: number){
+  getContracts(id: number){
     return this.httpClient.get<Contract>(`${this.config.appUrl}/contracts/${id}`);
   }
 }

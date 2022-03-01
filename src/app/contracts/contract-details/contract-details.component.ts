@@ -20,7 +20,7 @@ export class ContractDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
       const id = parseInt(params['id']);
-      this.contractService.getCustomer(id).subscribe(contract =>{
+      this.contractService.getContracts(id).subscribe(contract =>{
         this.contract = contract;
       })
     })
