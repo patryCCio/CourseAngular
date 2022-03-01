@@ -16,4 +16,8 @@ export class ContractService {
   getCustomers(){
     return this.httpClient.get<Contract[]>(`${this.config.appUrl}/contracts`);
   }
+
+  getCustomer(id: number){
+    return this.httpClient.get<Contract>(`${this.config.appUrl}/contracts/${id}`);
+  }
 }

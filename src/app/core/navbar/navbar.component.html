@@ -1,1 +1,22 @@
+<nav class="nav-container">
+    <div class="row">
+        <ul class="nav">
+            <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <a routerLink="customers">Klienci</a>
+            </li>
+            <li routerLinkActive="active">
+                <a routerLink="customers/add">Dodaj klienta</a>
+            </li>
+            <li routerLinkActive="active">
+                <a routerLink="contracts/list">Umowy</a>
+            </li>
+        </ul>
+
+        <form class="nav-log">
+            <button type="button" class="btn" (click)="authHelper.login()" *ngIf="!authHelper.isLogged">Zaloguj</button>
+            <button type="button" class="btn" (click)="authHelper.logout()" *ngIf="authHelper.isLogged">Wyloguj</button>
+        </form>
+    </div>
+</nav>
+
 

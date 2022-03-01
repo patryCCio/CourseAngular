@@ -5,6 +5,13 @@ import { CustomerDetailsComponent } from './customer-details/customer-details.co
 import { CustomerBrowserComponent } from './customer-browser/customer-browser.component';
 import { CustomerService } from './customer.service';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { AuthGuard } from '../core/auth-guard.service';
+
+const routes = [
+  {path: 'customers', component: CustomerBrowserComponent},
+  {path: 'customers/add', component: CustomerAddComponent, canActivate: [ AuthGuard ]}
+]
 
 export interface Customer{
   id?: number;
@@ -37,7 +44,8 @@ export enum CustomerType{
   ],
   imports: [
     FormsModule,
-    CommonModule
+    CommonModule,
+    RouterModule.forChild(routes)
   ],
   exports: [
     CustomerAddComponent,

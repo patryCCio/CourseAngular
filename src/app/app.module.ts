@@ -1,13 +1,20 @@
 import { HttpClientModule } from "@angular/common/http";
 import { NgModule } from "@angular/core";
-import { FormsModule } from "@angular/forms";
 import { BrowserModule } from "@angular/platform-browser";
+import { RouterModule, Routes } from "@angular/router";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { ContractsModule } from "./contracts/contracts.module";
+import { CoreModule } from "./core/core.module";
+import { NotFoundComponent } from "./core/not-found/not-found.component";
 import { CustomerModule } from "./customers/customer.module";
 import { CONFIG, Config } from "./model";
 
+
+const routes: Routes = [
+  {path: '', redirectTo:'customers', pathMatch: 'full'},
+  {path: '**', component: NotFoundComponent}
+]
 
 const config: Config = {
   customerLimit: 10,
@@ -23,7 +30,9 @@ const config: Config = {
     AppRoutingModule,
     HttpClientModule,
     ContractsModule,
-    CustomerModule
+    CustomerModule,
+    CoreModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [
     {provide: CONFIG, useValue: config}
