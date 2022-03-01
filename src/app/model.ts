@@ -1,21 +1,10 @@
-export interface Customer{
-    name: string;
-    photoUrl: string;
-    description: string;
-    age: number;
-    address: Address;
-    type: CustomerType;
-    categories: string[];
+import {InjectionToken } from "@angular/core";
+
+
+
+export interface Config {
+    customerLimit: number,
+    appUrl: string
 }
 
-export interface Address {
-    street: string;
-    houseNumber: number;
-    city: string;
-}
-
-export enum CustomerType{
-    Standard,
-    Premium,
-    VIP
-}
+export const CONFIG = new InjectionToken<Config>('app.config');

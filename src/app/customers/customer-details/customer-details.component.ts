@@ -2,7 +2,7 @@ import { Component, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, S
 import { Customer, CustomerType } from '../model';
 
 @Component({
-  selector: 'app-customer-details',
+  selector: 'cus-customer-details',
   templateUrl: './customer-details.component.html',
   styles: [
   ]
@@ -11,7 +11,7 @@ export class CustomerDetailsComponent implements OnInit, OnDestroy, OnChanges{
   
   @Input() customer: Customer = {
     name: "Jan Kowalski",
-      photoUrl: "assets/img/elegancko.jpg",
+      photoUrl: "assets/img/1.jpg",
       age: 34,
       description: "Dzwonić co każdy wtorek",
       address: {
